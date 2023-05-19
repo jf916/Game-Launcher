@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/page_one">
+    <fragment
+        android:id="@+id/page_one"
+        android:name="com.j.gamelauncher.page_one"
+        android:label="fragment_page_one"
+        tools:layout="@layout/fragment_page_one" />
+</navigation>
