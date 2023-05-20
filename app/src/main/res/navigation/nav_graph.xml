@@ -8,5 +8,6 @@
         android:id="@+id/page_one"
         android:name="com.j.gamelauncher.page_one"
         android:label="fragment_page_one"
-        tools:layout="@layout/fragment_page_one" />
+        tools:layout="@layout/fragment_page_one" >
+    </fragment>
 </navigation>

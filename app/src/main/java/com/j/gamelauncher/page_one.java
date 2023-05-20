@@ -1,10 +1,19 @@
 package com.j.gamelauncher;
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -55,10 +64,40 @@ public class page_one extends Fragment {
         }
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_page_one, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_page_one, container, false);
+
+        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("com.zeptolab.thieves.google", "com.zeptolab.thieves.ThievesActivity"));
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    // Define what your app should do if no activity can handle the intent.
+                }
+
+            }
+        });
+
+        view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("com.nianticlabs.pokemongo", "com.nianticproject.holoholo.libholoholo.unity.UnityMainActivity"));
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    // Define what your app should do if no activity can handle the intent.
+
+                }
+
+            }
+        });
+
+        return view;
     }
 }
