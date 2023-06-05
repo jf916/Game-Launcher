@@ -7,29 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.j.gamelauncher.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.j.gamelauncher.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setComponent(new ComponentName("com.android.wallpaper", "com.android.wallpaper.picker.CategoryPickerActivity"));
+                intent.setComponent(new ComponentName("com.j.gamelauncher", "com.j.gamelauncher.SettingsActivity"));
                 try {
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {

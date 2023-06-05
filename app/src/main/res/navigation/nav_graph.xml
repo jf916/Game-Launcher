@@ -10,4 +10,22 @@
         android:label="fragment_page_one"
         tools:layout="@layout/fragment_page_one" >
     </fragment>
+    <fragment
+        android:id="@+id/error_launch_null"
+        android:name="com.j.gamelauncher.error_launch_null"
+        android:label="error_launch_null"
+        tools:layout="@layout/fragment_error_launch_null">
+        <action
+            android:id="@+id/action_error_launch_null_to_settingsMenuFragment1"
+            app:destination="@id/settingsMenuFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsMenuFragment1"
+        android:name="com.j.gamelauncher.SettingsMenuFragment1"
+        android:label="fragment_settings_menu1"
+        tools:layout="@layout/fragment_settings_menu1" >
+        <action
+            android:id="@+id/action_settingsMenuFragment1_to_error_launch_null"
+            app:destination="@id/error_launch_null" />
+    </fragment>
 </navigation>
